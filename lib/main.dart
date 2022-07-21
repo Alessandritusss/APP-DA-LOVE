@@ -1,4 +1,4 @@
-import 'package:app_da_love/Lista.dart';
+import 'package:app_da_love/lista.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: const Lista(),
+      home: const AddTasks(),
     );
   }
 }

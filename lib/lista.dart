@@ -1,69 +1,142 @@
 import 'package:flutter/material.dart';
 
-class Lista extends StatefulWidget {
-  const Lista({Key? key}) : super(key: key);
+class AddTasks extends StatefulWidget {
+  const AddTasks({Key? key}) : super(key: key);
 
   @override
-  State<Lista> createState() => _ListaState();
+  State<AddTasks> createState() => _AddTasksState();
 }
 
-class _ListaState extends State<Lista> {
-  String pesquisa = '';
-
+class _AddTasksState extends State<AddTasks> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.purple,
-      body: SafeArea(
-        child: Column(
-          children: [
-            Stack(
-              children: [
-                Container(
-                  alignment: Alignment.topLeft,
-                  child: Image.asset(
-                    'assets/images/Logo Lovepeople.png',
-                    height: 100,
+      body: SingleChildScrollView(
+        reverse: true,
+        child: SafeArea(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Stack(
+                    children: [
+                      Container(
+                        height: 110,
+                        width: 110,
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(100),
+                          ),
+                        ),
+                      ),
+                      Image.asset(
+                        'assets/images/Logo Lovepeople.png',
+                        height: 100,
+                      ),
+                    ],
+                  ),
+                  const Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 27),
+                      child: Text(
+                        'Nova Tarefa',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontFamily: 'Kanit-Regular.ttf',
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(15),
+                child: TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: 'Título da Tarefa',
+                    hintStyle: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.deepPurple,
+                        fontFamily: 'Kanit-Regular.ttf'),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                   ),
                 ),
-              ],
-            ),
-            const Center(
-              child: Padding(
-                padding: EdgeInsets.only(),
-                child: Text(
-                  'Suas listagens',
-                  style: TextStyle(
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: TextFormField(
+                  textAlignVertical: TextAlignVertical.top,
+                  decoration: InputDecoration(
+                    //hintMaxLines: null,
+                    isDense: true,
+                    contentPadding: const EdgeInsets.fromLTRB(15, 10, 0, 300),
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: 'Escreva uma descrição para sua tarefa.',
+                    hintStyle: const TextStyle(
+                        fontSize: 18,
+                        color: Colors.deepPurple,
+                        fontFamily: 'Kanit-Regular.ttf'),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 100,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    FloatingActionButton(
+                      onPressed: (() {}),
+                      backgroundColor: const Color.fromARGB(244, 255, 253, 136),
+                    ),
+                    FloatingActionButton(
+                      onPressed: (() {}),
+                      backgroundColor: const Color.fromARGB(255, 255, 235, 192),
+                    ),
+                    FloatingActionButton(
+                      onPressed: (() {}),
+                      backgroundColor: const Color.fromARGB(244, 255, 197, 250),
+                    ),
+                    FloatingActionButton(
+                      onPressed: (() {}),
+                      backgroundColor: const Color.fromARGB(255, 201, 241, 253),
+                    ),
+                    FloatingActionButton(
+                      onPressed: (() {}),
+                      backgroundColor: const Color.fromARGB(244, 216, 255, 197),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  IconButton(
+                    onPressed: (() {}),
+                    icon: const Icon(Icons.close_rounded),
+                    iconSize: 80,
                     color: Colors.white,
-                    fontSize: 22,
                   ),
-                ),
+                  IconButton(
+                    onPressed: (() {}),
+                    icon: const Icon(Icons.done_rounded),
+                    iconSize: 80,
+                    color: Colors.white,
+                  ),
+                ],
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(30),
-              child: TextField(
-                onChanged: (texto) {
-                  pesquisa = texto;
-                  print(pesquisa);
-                },
-                decoration: const InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: 'Busque palavras-chave',
-                  hintStyle: TextStyle(fontSize: 17),
-                  suffixIcon: Icon(Icons.search),
-                ),
-              ),
-            ),
-            // Container(
-            //   padding: EdgeInsets.only(top: 400),
-            //   child: ElevatedButton(
-            //     onPressed: () {},
-            //     child: Icon(Icons.add),
-            //   ),
-            // ),
-          ],
+            ],
+          ),
         ),
       ),
     );
