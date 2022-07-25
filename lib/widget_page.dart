@@ -69,7 +69,7 @@ class loginWidget extends StatelessWidget {
         const Text(
           'Que bom que voltou!',
           style: TextStyle(
-              fontSize: 40,
+              fontSize: 30,
               fontFamily: 'Montserrat-semibold',
               color: Colors.white),
         ),
@@ -156,7 +156,7 @@ class loginWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 20,
+          height: 70,
         ),
       ]),
     );
@@ -192,7 +192,7 @@ class ForgotPassword extends StatelessWidget {
   }
 }
 
-Widget NewUser() {
+Widget newUser() {
   return RichText(
     text: TextSpan(
         text: 'Não possui cadastro? ',
