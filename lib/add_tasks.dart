@@ -31,9 +31,12 @@ class _AddTasksState extends State<AddTasks> {
                           ),
                         ),
                       ),
-                      Image.asset(
-                        'assets/images/Logo Lovepeople.png',
-                        height: 100,
+                      Padding(
+                        padding: const EdgeInsets.all(14),
+                        child: Image.asset(
+                          'assets/images/Logo Lovepeople.png',
+                          height: 60,
+                        ),
                       ),
                     ],
                   ),
