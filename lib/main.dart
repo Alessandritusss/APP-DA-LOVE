@@ -3,7 +3,6 @@ import 'package:app_da_love/view/cad_concluido.dart';
 import 'package:app_da_love/view/cadastro.dart';
 import 'package:app_da_love/view/lista.dart';
 import 'package:app_da_love/view/login.dart';
-
 import 'package:flutter/material.dart';
 
 void main() {
